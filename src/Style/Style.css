@@ -1,0 +1,21 @@
+/* -------------------------style for footer section-------------------  */
+/* .blog_footer {
+  height: 550px;
+  padding-top: 100px;
+} */
+.about {
+  text-align: start;
+}
+.input {
+  width: 250px;
+  padding: 8px;
+  border-radius: 5px;
+}
+.subscribe {
+  padding: 5px;
+  width: 100px;
+  border-radius: 5px;
+}
+.icon {
+  font-size: 20px;
+}
