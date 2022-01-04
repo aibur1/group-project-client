@@ -5,6 +5,7 @@ import "./App.css";
 import About from "./Pages/About/About";
 import AuthProvider from "./Pages/Context/AuthProvider";
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
+import BlogDetails from "./Pages/Home/BlogDetails/BlogDetails";
 import Home from "./Pages/Home/Home/Home";
 import Login from "./Pages/Login/Login/Login";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
@@ -25,10 +26,11 @@ function App() {
                 </PrivateRoute>
               }
             />
-            <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/blogDetails" element={<BlogDetails />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/home" element={<Home />} />
             <Route exact path="/" element={<Home />} />
           </Routes>
         </Router>
