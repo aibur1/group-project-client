@@ -17,14 +17,14 @@ const useFirebase = () => {
     const googleProvider = new GoogleAuthProvider();
 
     // log in with google provider
-    const handleGoogleLogin = (location, history) => {
+    const handleGoogleLogin = (location, navigate) => {
         setIsLoading(true);
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 handleLoginUserStore(result?.user?.displayName, result?.user?.email);
                 setUser(result.user);
                 const redirect_url = location?.state?.from || '/';
-                history.replace(redirect_url);
+                navigate(redirect_url);
             })
             .catch((error) => {
                 setError(error.message);
