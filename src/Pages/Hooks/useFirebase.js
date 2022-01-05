@@ -34,7 +34,8 @@ const useFirebase = () => {
 
 
     // register a new user using form create
-    const handleCreateNewUser = (email, password, name, history) => {
+    const handleRegisterNewUser = (email, password, name, navigate) => {
+        console.log(email, password, name, navigate);
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
@@ -50,7 +51,7 @@ const useFirebase = () => {
                 }).catch((error) => {
                     setError(error.message);
                 });
-                history.replace('/');
+                navigate('/');
                 // store user to database 
             })
             .catch((error) => {
@@ -138,7 +139,7 @@ const useFirebase = () => {
 
     return {
         handleGoogleLogin,
-        handleCreateNewUser,
+        handleRegisterNewUser,
         handleUserLogin,
         handleLogOut,
         user,
