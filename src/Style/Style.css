@@ -1,10 +1,9 @@
 /* -------------------------style for footer section-------------------  */
-/* .blog_footer {
-  height: 550px;
-  padding-top: 100px;
-} */
-.about {
-  text-align: start;
+.footer-container {
+  background-color: #333;
+}
+.footer-about {
+  text-align: justify;
 }
 .input {
   width: 250px;
@@ -17,5 +16,19 @@
   border-radius: 5px;
 }
 .icon {
-  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.icon i {
+  font-size: 25px;
+  color: #ddd;
+  background-color: tomato;
+  padding: 6px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+.info a {
+  text-decoration: none;
+  color: white;
 }
