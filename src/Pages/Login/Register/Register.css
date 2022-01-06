@@ -1,68 +1,59 @@
-.registration{
-   
-    background-color: rgba(67, 145, 145, 0.911);
-   padding-left: 50px;
+.registration {
+  /* background-color: #ddd; */
 }
-.form{
-  
-    background-image:  linear-gradient(
-        rgba(168, 86, 86, 0.479),
-        rgba(107, 100, 100, 0)
-      );
-    padding: 50px;
-     border-radius: 60px;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     width: 85%;
-     box-shadow: 10px 10px 8px ;
-   
+.form {
+  background-image: linear-gradient(
+    rgba(131, 125, 125, 0.479),
+    rgba(195, 171, 171, 0.2)
+  );
+  /* padding: 10px; */
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 85%; */
+  transform: translateY(-10px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 }
-.form-input{
-    background-color: #15232c;
-    color: #adb5bd;
-    border: none;
-    padding:20px;
-    border-radius: 35px;
-    width: 100%;
-   transition: background-color .6s;
-   margin-bottom: 5px;
-    
+.form-input {
+  background-color: #15232c;
+  color: #adb5bd;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 35px;
+  width: 100%;
+  transition: background-color 0.6s;
+  margin-bottom: 5px;
 }
 
-.form-input:hover{
-    background-color:silver;
-    color: black;
+.form-input:hover {
+  background-color: silver;
+  color: black;
 }
-.form-label{
-   color:rgb(8, 8, 8);
-   display: flex;
-   
+.form-label {
+  color: rgb(8, 8, 8);
+  display: flex;
 }
-.register-submit{
-    background-color:#15232c;
-    color: whitesmoke;
-    transition: background-color .4s;
-    width: 240px;
-    border-radius: 25px;
-    border: none;
-
-}
-
-.register-submit:hover{
-    background-color:silver;
-    color: black;
-}
-.login-text{
-    color: blue;
-    
-    
+.register-submit {
+  background-color: #15232c;
+  color: whitesmoke;
+  transition: background-color 0.4s;
+  width: 100%;
+  padding: 7px 5px;
+  border-radius: 25px;
+  border: none;
 }
 
-.login-text:hover{
-    color: tan;
-    text-decoration: underline;
+.register-submit:hover {
+  background-color: silver;
+  color: black;
+}
+.login-text {
+  color: blue;
+  text-decoration: none;
 }
 
-
-
+.login-text:hover {
+  color: tan;
+  text-decoration: underline;
+}
