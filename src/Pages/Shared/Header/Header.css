@@ -1,0 +1,31 @@
+.navbar{
+    position:sticky;
+   
+}
+.navlink{
+    margin: 5px;
+    color:black;
+    text-decoration: none;
+    font-size: large;
+    font-family: 'Lucida Sans';
+    font-style: italic;
+    cursor: pointer;
+}
+.button-login{
+    background-color:rgba(255, 222, 173, 0);
+    border: none;
+    color: black;
+}
+.button-login :hover{
+    background-color: rgba(255, 0, 0, 0);
+}
+.cursor{
+    cursor: pointer;
+}
+
+.app{
+    background-color: rgba(71, 5, 100, 0.26);
+}
+.course{
+    background-color:rgba(0, 139, 139, 0.315) ;
+}
