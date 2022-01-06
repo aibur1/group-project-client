@@ -2,10 +2,11 @@
   /* background-color: #ddd; */
 }
 .form {
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     rgba(131, 125, 125, 0.479),
     rgba(195, 171, 171, 0.2)
-  );
+  ); */
+  background-color: rgb(245, 245, 245);
   /* padding: 10px; */
   border-radius: 20px;
   display: flex;
