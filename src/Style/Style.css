@@ -32,3 +32,34 @@
   text-decoration: none;
   color: white;
 }
+
+/* -------------Add blog style -------------------*/
+.add-blog {
+  padding-bottom: 50px;
+}
+
+.add-blog form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-blog form input,
+textarea {
+  width: 60%;
+  margin-bottom: 13px;
+  border: 1px solid rgb(196, 194, 194);
+  border-radius: 4px;
+}
+.btn-design-add {
+  background: linear-gradient(to top, #800080, #ffc0cb);
+}
+select {
+  width: 60%;
+  margin-bottom: 8px;
+  border: 1px solid rgb(196, 194, 194);
+  border-radius: 4px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
