@@ -23,6 +23,7 @@ const AddBlog = () => {
     const formData = new FormData();
     formData.append("name", name);
     formData.append("email", email);
+    formData.append("posterImg", user.photoURL);
     formData.append("category", category);
     formData.append("title", title);
     formData.append("description", description);
