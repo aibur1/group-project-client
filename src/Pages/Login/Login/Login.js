@@ -1,13 +1,19 @@
 import React from 'react';
 import { Button, Col, Container, Form, Image, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import Header from '../Header/Header';
-import "./Login.css";
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useAuth from '../../Hooks/useAuth';
+// import "./Login.css";
 
-const login = () => {
+const Login = () => {
+    const {handleGoogleLogin} = useAuth();
+    const location = useLocation();
+    const navigate = useNavigate();
+    // login with google 
+    const loginWithGoogle = () =>{
+        handleGoogleLogin(location, navigate);
+    }
     return (
         <div className="login-container">
-            <Header></Header>
             <Row xs={1} md={1} lg={2} style={{ width: "100%" }}>
                 <Col>
                     <h1 style={{ color: "black" }}>Login here</h1>
@@ -27,9 +33,9 @@ const login = () => {
                                 sign in
                             </Button><br />
                             <h2 style={{ color: "white" }}>or</h2><br />
-                            <Button  className="sign-in">Google sign in</Button><br /><br />
+                            <Button  className="sign-in" onClick={loginWithGoogle}>Google sign in</Button><br /><br />
                             <h2 style={{ color: "white" }}> Not registerd?sign up now</h2>
-                            <Link to="/registration" className="register-text"> <h2> Go signup </h2></Link>
+                            <Link to="/register" className="register-text"> <h2> Go signup </h2></Link>
                             
                         </Form>
                     </Container>
@@ -42,4 +48,4 @@ const login = () => {
     );
 };
 
-export default login;
+export default Login;
