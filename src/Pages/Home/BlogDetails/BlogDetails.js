@@ -38,6 +38,7 @@ const BlogDetails = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm();
   const onSubmit = (submitData) => {
     submitData.postId = post?._id;
@@ -55,6 +56,7 @@ const BlogDetails = () => {
       .then(function (response) {
         if (response.data.insertedId) {
           setIsAddComment(true);
+          reset();
         }
       })
       .catch(function (error) {

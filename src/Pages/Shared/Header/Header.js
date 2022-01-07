@@ -10,11 +10,11 @@ const Header = () => {
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <NavLink className="navbar-brand text-warning me-5 fs-4 fw-bold" to="/home">THE BLOGER</NavLink>
+                <NavLink className="navbar-brand text-warning me-5 fs-4 fw-bold" to="/">THE BLOGER</NavLink>
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <NavLink className="nav-link active text-dark fw-bold" aria-current="page" to="/home">Home</NavLink>
+                            <NavLink className="nav-link active text-dark fw-bold" aria-current="page" to="/">Home</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink className="nav-link text-dark fw-bold" to="/blogs">Blogs</NavLink>

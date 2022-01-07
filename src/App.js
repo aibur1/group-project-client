@@ -36,8 +36,8 @@ function App() {
             <Route path="/blogDetails/:postId" element={<BlogDetails />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/home" element={<Home />} />
             <Route exact path="/" element={<Home />} />
+            {/* <Route path="/home" element={<Home />} /> */}
 
             {/* <Route path="/dashboard" element={<DashboardHome></DashboardHome>}></Route> */}
             <Route path="/dashboard/makeAdmin" element={<MakeAdmin />} />
