@@ -1,9 +1,7 @@
 import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
-// import fashion from '../../../images/fashion.jpg';
 import food from '../../../images/food.jpg';
-// import lifestyle from '../../../Images/lifestyle.jpg';
-import './Post.css';
+
 
 
 

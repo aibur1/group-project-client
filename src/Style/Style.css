@@ -82,9 +82,7 @@ select {
 }
 
 /*---------------------------- Register and Login page style ------------------------------  */
-.registration {
-  /* background-color: #ddd; */
-}
+
 .form {
   /* background-image: linear-gradient(
     rgba(131, 125, 125, 0.479),
@@ -149,4 +147,85 @@ select {
   padding: 10px 30px;
   border-radius: 25px;
   width: 100%;
+}
+
+/*------------------------- Dashboard Custom style ------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@200&family=Rubik&family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Shalimar&family=Yuji+Syuku&display=swap");
+
+.dashboard {
+  /* font-family: "Ubuntu", sans-serif; */
+  display: block;
+  padding-left: 20px;
+  color: Black;
+}
+.dash-btn {
+  font-weight: bold;
+}
+.c-body {
+  background: #b995b9;
+  color: white;
+}
+.card-head {
+  background: #cfb2cf;
+}
+.card-footer {
+  background: #cfb2cf;
+}
+
+.text-title {
+  display: block;
+  margin: 11px 0 17px 0;
+  font-size: 40px;
+  line-height: 80px;
+  color: #c51ca0;
+  text-shadow: 0 7.36px 8.896px #fa7ff0, 0 -5px 5px #fff;
+  letter-spacing: -4px;
+  font-family: "Yuji Syuku", serif;
+  text-transform: uppercase;
+}
+
+.btn-sub {
+  font-family: "Ubuntu", sans-serif;
+  border-radius: 5px;
+  border: none;
+  background-color: white;
+  color: #9b759b;
+  font-family: "Rubik", sans-serif;
+  letter-spacing: 1px;
+}
+
+/*------------------------- add new post / blog style ------------------------- */
+
+.card {
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border: none;
+
+  transition: all 0.3s linear;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+.img {
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: none;
+}
+.title {
+  font-weight: bolder;
+}
+
+.card-foot {
+  font-weight: 500;
+}
+
+.button {
+  background-color: rgb(240, 165, 25);
+  width: 100px;
+  height: 40px;
+  color: white;
+  border-radius: 5px;
 }

@@ -1,7 +1,6 @@
 import axios from "axios";
 import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
-// import initializeAuthentication from "../Login/Firebase/firebase.init";
 import initializeAuthentication from "../Login/Firebase/firebase.init";
 
 initializeAuthentication();
@@ -109,7 +108,7 @@ const useFirebase = () => {
     const handleStoreUserData = (name, email) => {
         const userInfo = { name, email };
         console.log(userInfo);
-        axios.post('https://infinite-escarpment-16645.herokuapp.com/users', userInfo)
+        axios.post('http://localhost:5000/users', userInfo)
             .then(res => {
                 if (res.data.insertedId) {
                     // alert('User Successfully store');
@@ -120,7 +119,7 @@ const useFirebase = () => {
     // handle store user login or google login data 
     const handleLoginUserStore = (name, email) => {
         const userInfo = { name, email };
-        fetch('https://infinite-escarpment-16645.herokuapp.com/users', {
+        fetch('http://localhost:5000/users', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

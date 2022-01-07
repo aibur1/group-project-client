@@ -4,7 +4,6 @@ import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import Header from '../../Shared/Header/Header';
-// import "./Login.css";
 
 const Login = () => {
     const {handleGoogleLogin, handleUserLogin} = useAuth();

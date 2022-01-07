@@ -6,7 +6,6 @@ import "./App.css";
 import About from "./Pages/About/About";
 import AuthProvider from "./Pages/Context/AuthProvider";
 import AddBlog from "./Pages/Dashboard/AddBlog/AddBlog";
-// import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 import MakeAdmin from "./Pages/Dashboard/MakeAdmin/MakeAdmin";
 import ManagePosts from "./Pages/Dashboard/ManagePosts/ManagePosts";

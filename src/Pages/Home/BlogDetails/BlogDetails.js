@@ -56,7 +56,7 @@ const BlogDetails = () => {
                 />
               </div>
             </div>
-            <textarea className="w-100" name="" id="" cols="" rows=""></textarea>
+            <textarea className="w-100" placeholder="Comments..." name="" id="" cols="" rows=""></textarea>
             <button type="submit">Comment</button>
                 </form>
             </div>
