@@ -33,7 +33,7 @@ function App() {
               }
             />
             <Route path="/about" element={<About />} />
-            <Route path="/blogDetails" element={<BlogDetails />} />
+            <Route path="/blogDetails/:postId" element={<BlogDetails />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/home" element={<Home />} />

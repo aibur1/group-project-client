@@ -229,3 +229,16 @@ select {
   color: white;
   border-radius: 5px;
 }
+
+/*------------------------- details page style ------------------------- */
+.comment-btn {
+  background-color: #ffc107;
+  color: black;
+  border-radius: 5px;
+  transition: 0.4s;
+}
+.comment-btn:hover {
+  background-color: black;
+  color: #ffc107;
+  border-radius: 15px;
+}
