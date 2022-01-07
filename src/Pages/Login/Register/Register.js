@@ -1,10 +1,25 @@
 import React from 'react';
-import { Button, Col, Container, Form, Image, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Col, Container, Form, Image, Row } from 'react-bootstrap';
+import { useForm } from 'react-hook-form';
+import { Link, useNavigate } from 'react-router-dom';
+import useAuth from '../../Hooks/useAuth';
 import Header from '../../Shared/Header/Header';
 import "./Register.css";
 
 const Registration = () => {
+    const {handleRegisterNewUser} = useAuth();
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const navigate = useNavigate();
+  const onSubmit = submitData =>{
+    //   console.log(submitData);
+      if (submitData.userPass1 === submitData.userPass2) {
+              handleRegisterNewUser(submitData?.userEmail, submitData?.userPass1, submitData?.userName, navigate);
+      }
+      else{
+          alert('Password not matched.');
+          return ;
+      }
+  }
     return (
         <div className="registration">
              <Header />
@@ -14,36 +29,34 @@ const Registration = () => {
                         {/* <h1>Registration here</h1> */}
             
                         <Container className="form py-3" >
-                           <Form >
+                        <form onSubmit={handleSubmit(onSubmit)}>
                            <h2 className='pt-2'>REGISTER FORM</h2>
                            <hr className='w-50 mx-auto border border-2 border-dark' />
                                 <Form.Group className="mb-3" controlId="formGroupName">
                                     <Form.Label className="form-label">Your Full Name</Form.Label>
-                                    <Form.Control name='name' type="text" placeholder="full name" className="form-input" />
+                                    <input  type="text" placeholder="Full Name"  {...register("userName", {})} className="form-input" />
 
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formGroupEmail">
                                     <Form.Label className="form-label">Email address</Form.Label>
-                                    <Form.Control name="email" type="email" placeholder="Enter email" className="form-input" />
+                                    <input type="email" placeholder="Email" {...register("userEmail", {})} className="form-input" />
 
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formGroupPassword">
                                     <Form.Label className="form-label">Enter password</Form.Label>
-                                    <Form.Control name="password" type="password"  placeholder="Password" className="form-input" />
+                                    <input type="password" placeholder="Password" {...register("userPass1", {})} className="form-input" />
                                 </Form.Group>
 
 
                                 <Form.Group className="mb-4" controlId="formGroupPassword">
                                     <Form.Label className="form-label">re-type Password</Form.Label>
-                                    <Form.Control name="password2" type="password"  placeholder="re-type Password" className="form-input" />
+                                    <input type="password" placeholder="Re-Enter Password" {...register("userPass2", {})} className="form-input" />
                                 </Form.Group>
-                                <Button size="lg" className="register-submit" type="submit">
-                                    Submit
-                                </Button>
+                                <input type="submit" className="register-submit" />
                                 <br /> <br />
                                 <h4>already registerd?Back to</h4>
                                 <Link className="login-text" to="/login"> <h5>LOGIN</h5> </Link>
-                            </Form>
+                            </form>
                         </Container> 
 
 

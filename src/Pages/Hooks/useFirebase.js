@@ -63,14 +63,14 @@ const useFirebase = () => {
 
 
     // log in a existing user 
-    const handleUserLogin = (email, password, location, history) => {
+    const handleUserLogin = (email, password, location, navigate) => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 setUser(result.user);
                 const redirect_url = location?.state?.from || '/';
                 handleLoginUserStore(result.user.displayName, result.user.email);
-                history.push(redirect_url);
+                navigate(redirect_url);
                 setError('');
             })
             .catch((error) => {

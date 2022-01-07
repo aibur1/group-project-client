@@ -125,7 +125,7 @@ select {
   transition: background-color 0.4s;
   width: 100%;
   font-weight: bold;
-  padding: 7px 5px;
+  padding: 10px 5px;
   border-radius: 25px;
   border: none;
   transition: 0.4s;
