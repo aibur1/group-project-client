@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
 
 
 const FeaturedPost = () => {
+    const [posts, setPosts] = useState([]);
+    console.log(posts);
+    useEffect(() =>{
+        fetch('https://calm-eyrie-50135.herokuapp.com/blog')
+        .then(res => res.json())
+        .then(data => setPosts(data))
+
+    }, []);
     return (
         <div>
             

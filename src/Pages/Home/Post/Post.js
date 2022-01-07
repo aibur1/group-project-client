@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import food from '../../../images/food.jpg';
 
@@ -28,6 +28,14 @@ const OurPost = [
 ];
 
 const Post = () => {
+    const [posts, setPosts] = useState([]);
+    console.log(posts);
+    useEffect(() =>{
+        fetch('https://calm-eyrie-50135.herokuapp.com/blog')
+        .then(res => res.json())
+        .then(data => setPosts(data))
+
+    }, []);
     return (
         <div >
             <h1>featured post</h1>

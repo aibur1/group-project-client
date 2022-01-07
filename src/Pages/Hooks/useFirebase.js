@@ -20,7 +20,7 @@ const useFirebase = () => {
         setIsLoading(true);
         signInWithPopup(auth, googleProvider)
             .then((result) => {
-                handleLoginUserStore(result?.user?.displayName, result?.user?.email);
+                handleLoginUserStore(result?.user?.displayName, result?.user?.email, result?.user?.photoURL);
                 setUser(result.user);
                 const redirect_url = location?.state?.from || '/';
                 navigate(redirect_url);
@@ -46,7 +46,7 @@ const useFirebase = () => {
                 updateProfile(auth.currentUser, {
                     displayName: name
                 }).then(() => {
-                    handleStoreUserData(result?.user?.displayName, result?.user?.email);
+                    handleStoreUserData(result?.user?.displayName, result?.user?.email, result?.user?.photoURL);
                 }).catch((error) => {
                     setError(error.message);
                 });
@@ -68,7 +68,7 @@ const useFirebase = () => {
             .then((result) => {
                 setUser(result.user);
                 const redirect_url = location?.state?.from || '/';
-                handleLoginUserStore(result.user.displayName, result.user.email);
+                handleLoginUserStore(result.user.displayName, result.user.email, result?.user?.photoURL);
                 navigate(redirect_url);
                 setError('');
             })
@@ -105,8 +105,10 @@ const useFirebase = () => {
 
 
     //store user data to server (mongoDb)
-    const handleStoreUserData = (name, email) => {
-        const userInfo = { name, email };
+    const handleStoreUserData = (name, email, photo) => {
+        let photoURL ;
+        photo ? photoURL = photo : photoURL = 'https://i.ibb.co/jwLpZMr/user-profile.png';
+        const userInfo = { name, email , photoURL};
         console.log(userInfo);
         axios.post('http://localhost:5000/users', userInfo)
             .then(res => {
@@ -117,8 +119,10 @@ const useFirebase = () => {
     }
 
     // handle store user login or google login data 
-    const handleLoginUserStore = (name, email) => {
-        const userInfo = { name, email };
+    const handleLoginUserStore = (name, email, photo) => {
+        let photoURL;
+        photo ? photoURL = photo : photoURL = 'https://i.ibb.co/jwLpZMr/user-profile.png';
+        const userInfo = { name, email , photoURL};
         fetch('http://localhost:5000/users', {
             method: 'PUT',
             headers: {

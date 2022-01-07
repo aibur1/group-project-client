@@ -1,9 +1,33 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import detailsImage from "../../../images/Blog-details.jpg";
 import useAuth from "../../Hooks/useAuth";
+const axios = require('axios');
 
 const BlogDetails = () => {
   const { user } = useAuth();
+
+  // add new comment
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (submitData) => {
+    submitData.posterName = user?.displayName;
+    submitData.posterEmail = user?.email;
+    submitData.posterPhoto = user?.photoURL ? user.photoURL : 'https://i.ibb.co/jwLpZMr/user-profile.png';
+    
+    axios.post('http://localhost:5000/comments', {
+      submitData
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
   return (
     <div className="py-4">
       <div className="container">
@@ -14,12 +38,21 @@ const BlogDetails = () => {
         <div className="d-flex justify-content-between align-items-center p-3 bg-light">
           <div className="text-start d-flex align-items-center">
             <div>
-              <img
-                src={user.photoURL}
-                style={{ width: "48px" }}
-                className="img-fluid rounded-circle"
-                alt=""
-              />
+              {user.photoURL ? (
+                <img
+                  width="48px"
+                  className="img-fluid rounded-circle"
+                  src={user?.photoURL}
+                  alt="user"
+                />
+              ) : (
+                <img
+                  width="48px"
+                  className="img-fluid rounded-circle"
+                  src={`https://i.ibb.co/jwLpZMr/user-profile.png`}
+                  alt="user"
+                />
+              )}
             </div>
             <div className="ms-2">
               <p className="mb-0">
@@ -42,23 +75,34 @@ const BlogDetails = () => {
         <div className="bg-light p-3">
           <img src={detailsImage} className="img-fluid" alt="" />
           <div className="d-flex justify-content-between align-items-center p-3">
-            
             {/* commnet box  */}
-            <div>
-                <form action=""  className="d-flex justify-content-between align-items-center p-3">
-                <div className="text-start">
-              <div>
-                <img
-                  src={user.photoURL}
-                  style={{ width: "48px" }}
-                  className="img-fluid rounded-circle"
-                  alt=""
-                />
-              </div>
-            </div>
-            <textarea className="w-100" placeholder="Comments..." name="" id="" cols="" rows=""></textarea>
-            <button type="submit">Comment</button>
-                </form>
+            <div className="w-100">
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="d-flex justify-content-between align-items-center p-1"
+              >
+                <div className="text-start me-2">
+                  <div>
+                    {user.photoURL ? (
+                      <img
+                        width="48px"
+                        className=" rounded-circle"
+                        src={user?.photoURL}
+                        alt="user"
+                      />
+                    ) : (
+                      <img
+                        width="48px"
+                        className=" rounded-circle"
+                        src={`https://i.ibb.co/jwLpZMr/user-profile.png`}
+                        alt="user"
+                      />
+                    )}
+                  </div>
+                </div>
+                <textarea placeholder="Comments..." className="w-100 p-1 mb-0 me-1" {...register("comment", {})} />
+                <button className="border-0 bg-warning p-2 rounded-2" type="submit"><span><i className="fas fa-location-arrow fs-3"></i></span></button>
+              </form>
             </div>
           </div>
         </div>

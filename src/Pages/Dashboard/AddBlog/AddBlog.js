@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import useAuth from "../../Hooks/useAuth";
 
 const AddBlog = () => {
+  const {user} = useAuth();
   const { register, reset } = useForm();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -51,12 +53,13 @@ const AddBlog = () => {
         <h1>Add blog</h1>
         <form onSubmit={handleSubmit}>
           <input
+            value={user?.displayName ? user?.displayName : ''}
             {...register("name", { required: true, maxLength: 20 })}
             placeholder="Name"
             onChange={(e) => setName(e.target.value)}
-            // defaultValue={user.displayName}
           />
           <input
+            value={user?.email ? user?.email : ''}
             {...register("email", { required: true })}
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
