@@ -33,13 +33,9 @@ const Registration = () => {
                                 </Form.Group>
 
 
-                                <Form.Group className="mb-3" controlId="formGroupPassword">
+                                <Form.Group className="mb-4" controlId="formGroupPassword">
                                     <Form.Label className="form-label">re-type Password</Form.Label>
                                     <Form.Control name="password2" type="password"  placeholder="re-type Password" className="form-input" />
-                                </Form.Group>
-                                <Form.Group className="mb-3" controlId="formHorizontalCheck">
-                                    <Form.Check type="checkbox"
-                                        className="form-label" label="I accept terms and condition" />
                                 </Form.Group>
                                 <Button size="lg" className="register-submit" type="submit">
                                     Submit
